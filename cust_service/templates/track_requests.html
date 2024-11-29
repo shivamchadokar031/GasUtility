@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Requests</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0">Your Service Requests</h2>
+        </div>
+        <div class="card-body">
+          {% if service_requests %}
+            <ul class="list-group">
+              {% for request in service_requests %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="{% url 'service_request_detail' pk=request.pk %}" class="text-decoration-none">
+                    {{ request.request_type.name }} - {{ request.status }}
+                  </a>
+                  <span class="badge bg-info text-dark">{{ request.status }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="text-muted">No service requests found.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+    ></script>
+  </body>
+</html>

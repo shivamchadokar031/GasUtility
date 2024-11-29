@@ -1,0 +1,37 @@
+{% load custom_filters %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Request Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="mb-4">Service Request Form</h2>
+
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="{{ form.request_type.id_for_label }}">Request Type</label>
+          {{ form.request_type|add_class:"form-control" }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.details.id_for_label }}">Details</label>
+          {{ form.details|add_class:"form-control" }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.files.id_for_label }}">Files</label>
+          {{ form.files|add_class:"form-control-file" }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Request</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Details</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0">Request Details</h2>
+        </div>
+        <div class="card-body">
+          <p><strong>Status:</strong> {{ service_request.status }}</p>
+          <p><strong>Submitted on:</strong> {{ service_request.submitted_at }}</p>
+          <p><strong>Resolved on:</strong> {{ service_request.resolved_at }}</p>
+          <p><strong>Details:</strong> {{ service_request.details }}</p>
+          {% if service_request.files %}
+          <p>
+            <strong>Attached File:</strong>
+            <a href="{{ service_request.files.url }}" class="btn btn-link">Download</a>
+          </p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+
+  <body>
+    <h2>Manage Open Requests</h2>
+<ul>
+    {% for request in open_requests %}
+        <li>{{ request.details }} - <a href="{% url 'service_request_detail' pk=1 %}">View</a></li>
+    {% endfor %}
+</ul>
+  </body>
+</html>

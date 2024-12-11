@@ -8,7 +8,6 @@ The Gas Utility Management System is a Django-based web application that allows 
 
 This application is designed to streamline utility service management and provide a user-friendly interface for both customers and administrators.
 
----
 
 ## Features
 1. **User Authentication**
@@ -25,14 +24,12 @@ This application is designed to streamline utility service management and provid
 4. **Admin Panel**
    - Manage users and service requests from Django's admin interface.
 
----
 
 ## Prerequisites
 Ensure you have the following installed on your system:
 - Python (>=3.7)
 - Django (>=4.0)
 
----
 
 ## Installation and Setup
 
@@ -67,7 +64,6 @@ Ensure you have the following installed on your system:
 6. **Access the Application**
    - Open your browser and visit: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
----
 
 ## Usage
 
@@ -92,7 +88,6 @@ Ensure you have the following installed on your system:
    - Access the admin panel at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
    - Manage users, service requests, and other data models.
 
----
 
 ## Contributing
 1. Fork the repository.
